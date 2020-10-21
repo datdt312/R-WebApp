@@ -22,4 +22,4 @@ estimate_model <- function(filePath, dependentVar, independentVar) {
     return(res)
 }
 
-estimate_model("./temp/Table2_1.xls", "output", "labor,capital")
+# estimate_model("./temp/Table2_1.xls", "output", "labor,capital")
