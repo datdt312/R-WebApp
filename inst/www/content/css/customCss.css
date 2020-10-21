@@ -1,0 +1,75 @@
+.barcode {
+    white-space: pre;
+    /* or pre-wrap if you want wrapping to still work. */
+}
+
+.content-layout {
+    width: 100%;
+    padding: 5px;
+}
+
+.padding-top-layout {
+    padding-top: 15px;
+}
+
+.vertical-line {
+    border-left: 1px solid red;
+    min-height: 700px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 80px;
+}
+
+.panel-v {
+    display: block;
+    overflow: auto;
+    min-height: 700px;
+    max-height: 700px;
+    border: 1px solid red;
+    margin: 15px;
+    padding: 15px;
+}
+
+.panel-input {
+    position: relative;
+    float: left;
+    width: 48%;
+    margin-right: 0px;
+}
+
+.panel-output {
+    position: relative;
+    float: right;
+    width: 48%;
+    margin-left: 0px;
+}
+
+.pre-output {
+    overflow-x: auto;
+}
+
+.no-max-width {
+    max-width: 100%;
+    width: 100%;
+}
+
+.tab-right {
+    padding-left: 15px;
+}
+
+.tab-right-2 {
+    padding-left: 30px;
+}
+
+.no-padding-right {
+    padding-right: 0px;
+}
+
+.no-padding-left {
+    padding-left: 0px;
+}
+
+.download-button {
+    width: 200%;
+}
