@@ -17,57 +17,252 @@
 </head>
 
 <body>
-    <section class="content">
-        <div class="box box-solid">
-            <div class="box-header">
-                <h1>OpenCPU App Demo 2</h1>
-            </div>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="./index.html">Trang chủ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse-top-id">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./EffectiveMeasure.html">Mô hình 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./NaturalDisasterQuantification.html">Mô hình 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./DisasterResponseDifferentMeasure.html">Mô hình 3</a>
+                </li>
+            </ul>
         </div>
-        <div class="box-body">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="small-box bg-green">
-                        <div class="inner">
-                            <h3>11<sup style="font-size: 20px">%</sup></h3>
+    </nav>
 
-                            <h3>Mô hình 1</h3>
+    <div class="content-layout padding-top-layout">
+
+
+
+
+        <section class="content-header text-center">
+            <h4>
+                <b>
+            MÔ HÌNH ĐO LƯỜNG HIỆU QUẢ
+        </b>
+            </h4>
+        </section>
+
+        <section class="content">
+            <form id="formEffectiveMeasurelId" name="formEffectiveMeasurelId">
+                <div class="box box-danger">
+                    <div class="box-header">
+
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label class="text-bold" name="City">Chọn tỉnh</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <select class="form-control" id="City" name="City"><option value="C01">Thành phố Hồ Chí Minh</option>
+<option value="C02">Thành phố Hà Nội</option>
+</select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label class="text-bold" name="City">Kiểu dữ liệu</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <select class="form-control" id="DataType" name="DataType"><option value="DT01">Dữ liệu chéo</option>
+<option value="DT02">Dữ liệu mảng</option>
+</select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1 no-padding-right">
+                                <div class="form-group">
+                                    <button type="button" class="no-max-width btn bg-yellow" action="UploadFile">
+                                <span>Tải dữ liệu</span>
+                            </button>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" name="message" id="add-file-box" placeholder="Chưa có tệp nào được chọn" class="form-control" readonly="">
+                                        <input type="file" name="file-upload" id="file-upload" class="form-control" accept=".csv, .xls, .xlsx" hidden="">
+                                        <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary btn-flat" action="AddFile" href="#">Thêm tệp</button>
+                                </span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <a href="./EffectiveMeasure.html" class="small-box-footer">Sử dụng <i class="fa fa-arrow-circle-right"></i></a>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <b>
+                                <label for="I">I. Khai báo thông tin chạy mô hình</label>
+                            </b>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group tab-right">
+                                            <label for="lblDependentVariables">Chọn biến phụ thuộc</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 no-max-width">
+                                        <div class="form-group">
+                                            <span class="multiselect-native-select"><select class="form-control" id="DependentVariables" name="DependentVariables" hidden="" disabled="">
+                                    </select><div class="btn-group"><button type="button" class="multiselect dropdown-toggle btn btn-default disabled" data-toggle="dropdown" title="None Selected" disabled=""><span class="multiselect-selected-text">None Selected</span>                                            <b class="caret"></b></button>
+                                            <ul class="multiselect-container dropdown-menu"></ul>
+                                        </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group tab-right">
+                                        <label for="lblIndependentVariables">Chọn biến độc lập</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 no-max-width">
+                                    <div class="form-group">
+                                        <span class="multiselect-native-select"><select class="form-control" id="IndependentVariables" name="IndependentVariables" hidden="" disabled="">
+                                    </select><div class="btn-group"><button type="button" class="multiselect dropdown-toggle btn btn-default disabled" data-toggle="dropdown" title="None Selected" disabled=""><span class="multiselect-selected-text">None Selected</span>                                        <b class="caret"></b></button>
+                                        <ul class="multiselect-container dropdown-menu"></ul>
+                                    </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="small-box bg-yellow">
-                        <div class="inner">
-                            <h3>22<sup style="font-size: 20px">%</sup></h3>
 
-                            <h3>Mô hình 2</h3>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <b>
+                                <label for="II">II. Chức năng</label>
+                            </b>
                         </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <div class="col-md-2 no-max-width">
+                        <div class="form-group">
+                            <select class="form-control" id="ChucNang" name="ChucNang"><option value="FT01">Ước lượng mô hình</option>
+<option value="FT02">Kiểm định kết quả mô hình</option>
+<option value="FT03">Phê duyệt kết quả mô hình</option>
+<option value="FT04">Tổng hợp và kết xuất dữ liệu</option>
+</select>
                         </div>
-                        <a href="./NaturalDisasterQuantification.html" class="small-box-footer">Sử dụng</a> <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button type="button" class="no-max-width btn btn-primary" action="RunModel">Chạy mô hình</button>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="small-box bg-aqua">
-                        <div class="inner">
-                            <h3>33<sup style="font-size: 20px">%</sup></h3>
 
-                            <h3>Mô hình 3</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <b>
+                                <label for="III">III. Đầu ra</label>
+                            </b>
                         </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group tab-right">
+                                    <label for="lbtxt">1. Kết quả ước lượng (File text  - Output.txt - Xuất ra từ R)</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="download-button btn bg-green" id="download-txt-btn" action="Download">Tải về</button>
+                            </div>
                         </div>
-                        <a href="./DisasterResponseDifferentMeasure.html" class="small-box-footer">Sử dụng <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group tab-right">
+                                    <label for="lbxls">2. Kết quả dự báo (File excel - Xuất ra từ R + Xử lý dữ liệu)</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="download-button btn bg-green" id="download-xls-btn" action="Download">Tải về</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group tab-right">
+                                    <label for="lbimg">3. Đồ thị - File ảnh (Xuất ra từ R)</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="download-button btn bg-green" id="download-img-btn" action="Download">Tải về</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+    </div>
+    </div>
+    </form>
     </section>
 
+    <script>
+        $(function() {
+            myEffectiveMeasure.init();
+        });
+    </script>
+
+    <hr>
+
+    </div>
+
+    <div class="modal fade" id="modal-console-output" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Kết quả</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body console-output">
+                    <pre id="console-output"></pre>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+
+
+    <script type="text/javascript">
+        $(function() {
+            _Layout.init();
+        });
+    </script>
 </body>
 
 </html>
